@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>n-ids-form</title>
+    <meta name="description" content="Componente Form">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="./bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!-- <link rel="import" href="/src/n-ids-form-app/n-ids-form-app.html"> -->
+    <link rel="import" href="./n-ids-form.html">
+    <link rel="import" href="../polymer/lib/elements/dom-bind.html">
+
+
+
+
+  </head>
+  <body>
+    <!-- <n-ids-form></n-ids-form> -->
+
+    <dom-bind>
+      <template>
+        <n-ids-form fields="[[fields]]">
+
+        </n-ids-form>
+
+      </template>
+    </dom-bind>
+
+    <script type="text/javascript">
+
+      /*
+      on-ids-form-presubmit-bypass="presubmitBypassHandler"
+      on-ids-form-response="responseHandler"
+      action="[[action]]"
+      enctype="[[enctype]]"
+      method="PUT"
+      is-bypass
+      */
+      const autoBind = document.querySelector('dom-bind');
+      autoBind.fields = [{
+          label: 'Escribe tu nombre',
+          name: 'nombre',
+          required: true,
+          autoValidate: true,
+          pattern: '^[a-zA-Z\\s]{10,}$',
+          value: '',
+          icon : "account-circle"
+        },
+        {
+          label: 'Email',
+          name: 'email',
+          email: 'jaime.cervantes@email.com',
+          required: true,
+          autoValidate: true,
+          pattern: '^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$',
+          value: '',
+          icon : 'mail'
+        },
+        {
+          label: 'Telefono',
+          name: 'telefono',
+          required: true,
+          value: '',
+          icon : "settings-phone"
+        },
+        {
+          label: 'Telefono de Trabajo',
+          name: 'telefonoTrabajo',
+          value: '',
+          icon : "settings-phone"
+        }
+
+
+
+
+      ];
+      console.warn(autoBind.fields);
+    </script>
+  </body>
+</html>

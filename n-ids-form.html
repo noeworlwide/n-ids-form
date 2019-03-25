@@ -1,0 +1,71 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../n-ids-input/n-ids-input.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-form/iron-form.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="n-ids-form">
+  <!-- <template id="">
+    <n-ids-input label="Nombre" icon="account-circle" pattern="[a-zA-Z]{3-20}" msj-error="Ingrese correctamete su nombre"> </n-ids-input>
+    <n-ids-input label="Telefono" icon="settings-phone" pattern="[0-9]{8-15}"> </n-ids-input>
+    <n-ids-input label="Correo" icon="mail"> </n-ids-input>
+  </template> -->
+
+<template id="">
+
+  <style>
+    :host{
+
+    }
+    paper-button.primary{
+      background-color: rgb(52, 110, 147);
+      color: white;
+    }
+    paper-button.danger{
+      background-color: rgb(205, 60, 90);
+      color: white;
+    }
+  </style>
+
+  <iron-form id="ironForm">
+    <form action="">
+      <template is="dom-repeat" items="{{fields}}" as="itemActual">
+      <n-ids-input label="[[itemActual.label]]" icon="[[itemActual.icon]]" allowed-pattern="[[itemActual.pattern]]"></n-ids-input>
+      </template>
+      <paper-button raided class="primary" on-click="_sendData">Guardar</paper-button>
+      <paper-button raided class="danger">Cancelar</paper-button>
+    </form>
+
+  </iron-form>
+</template>
+
+
+  <script type="text/javascript">
+    class NIdsForm extends Polymer.Element{
+      constructor(){
+        super();
+        console.warn(this);
+      }
+      static get is (){
+        return "n-ids-form";
+      }
+      static get properties(){
+        return{
+          fields: {
+            type: Array,
+            value: ()=>[]
+          },
+        }
+      }
+      _sendData(){
+        console.warn("llego aqui");
+        console.warn(this.$.ironForm);
+        this.$.ironForm.reset();
+      }
+    }
+    window.customElements.define(NIdsForm.is, NIdsForm);
+  </script>
+
+</dom-module>

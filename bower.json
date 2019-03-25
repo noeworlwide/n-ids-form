@@ -1,0 +1,17 @@
+{
+  "name": "n-ids-form",
+  "description": "Componente Form",
+  "main": "index.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "n-ids-input": "https://github.com/noeworlwide/n-ids-input.git",
+    "paper-input": "@polymer/paper-input#^2.0.0",
+    "iron-icons": "@polymer/iron-icons#^2.0.0",
+    "paper-button": "@polymer/paper-button#^2.0.0",
+    "iron-form": "@polymer/iron-form#^2.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
+}

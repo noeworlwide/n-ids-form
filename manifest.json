@@ -1,0 +1,7 @@
+{
+  "name": "n-ids-form",
+  "short_name": "n-ids-form",
+  "description": "Componente Form",
+  "start_url": "/",
+  "display": "standalone"
+}
